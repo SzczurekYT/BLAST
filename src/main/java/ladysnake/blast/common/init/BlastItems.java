@@ -9,10 +9,10 @@ import net.minecraft.block.DispenserBlock;
 import net.minecraft.block.dispenser.ProjectileDispenserBehavior;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.math.Position;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 public class BlastItems {
@@ -38,26 +38,26 @@ public class BlastItems {
     public static Item PIPE_BOMB;
 
     public static void init() {
-        BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.BOMB), "bomb");
-        TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.TRIGGER_BOMB), "trigger_bomb");
-        GOLDEN_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.GOLDEN_BOMB), "golden_bomb");
-        GOLDEN_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.GOLDEN_TRIGGER_BOMB), "golden_trigger_bomb");
-        DIAMOND_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.DIAMOND_BOMB), "diamond_bomb");
-        DIAMOND_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.DIAMOND_TRIGGER_BOMB), "diamond_trigger_bomb");
-        NAVAL_MINE = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.NAVAL_MINE), "naval_mine");
-        CONFETTI_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.CONFETTI_BOMB), "confetti_bomb");
-        CONFETTI_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.CONFETTI_TRIGGER_BOMB), "confetti_trigger_bomb");
-        DIRT_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.DIRT_BOMB), "dirt_bomb");
-        DIRT_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.DIRT_TRIGGER_BOMB), "dirt_trigger_bomb");
-        PEARL_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.PEARL_BOMB), "pearl_bomb");
-        PEARL_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.PEARL_TRIGGER_BOMB), "pearl_trigger_bomb");
-        SLIME_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.SLIME_BOMB), "slime_bomb");
-        SLIME_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.TOOLS).maxCount(16), BlastEntities.SLIME_TRIGGER_BOMB), "slime_trigger_bomb");
-        AMETHYST_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16), BlastEntities.AMETHYST_BOMB), "amethyst_bomb");
-        AMETHYST_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16), BlastEntities.AMETHYST_TRIGGER_BOMB), "amethyst_trigger_bomb");
-        FROST_BOMB = registerItem(new BombItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16), BlastEntities.FROST_BOMB), "frost_bomb");
-        FROST_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16), BlastEntities.FROST_TRIGGER_BOMB), "frost_trigger_bomb");
-        PIPE_BOMB = registerItem(new PipeBombItem(new Item.Settings().group(ItemGroup.COMBAT).maxCount(16)), "pipe_bomb");
+        BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.BOMB), "bomb");
+        TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.TRIGGER_BOMB), "trigger_bomb");
+        GOLDEN_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.GOLDEN_BOMB), "golden_bomb");
+        GOLDEN_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.GOLDEN_TRIGGER_BOMB), "golden_trigger_bomb");
+        DIAMOND_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.DIAMOND_BOMB), "diamond_bomb");
+        DIAMOND_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.DIAMOND_TRIGGER_BOMB), "diamond_trigger_bomb");
+        NAVAL_MINE = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.NAVAL_MINE), "naval_mine");
+        CONFETTI_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.CONFETTI_BOMB), "confetti_bomb");
+        CONFETTI_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.CONFETTI_TRIGGER_BOMB), "confetti_trigger_bomb");
+        DIRT_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.DIRT_BOMB), "dirt_bomb");
+        DIRT_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.DIRT_TRIGGER_BOMB), "dirt_trigger_bomb");
+        PEARL_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.PEARL_BOMB), "pearl_bomb");
+        PEARL_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.PEARL_TRIGGER_BOMB), "pearl_trigger_bomb");
+        SLIME_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.SLIME_BOMB), "slime_bomb");
+        SLIME_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.SLIME_TRIGGER_BOMB), "slime_trigger_bomb");
+        AMETHYST_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.AMETHYST_BOMB), "amethyst_bomb");
+        AMETHYST_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.AMETHYST_TRIGGER_BOMB), "amethyst_trigger_bomb");
+        FROST_BOMB = registerItem(new BombItem(new Item.Settings().maxCount(16), BlastEntities.FROST_BOMB), "frost_bomb");
+        FROST_TRIGGER_BOMB = registerItem(new TriggerBombItem(new Item.Settings().maxCount(16), BlastEntities.FROST_TRIGGER_BOMB), "frost_trigger_bomb");
+        PIPE_BOMB = registerItem(new PipeBombItem(new Item.Settings().maxCount(16)), "pipe_bomb");
     }
 
     public static Item registerItem(Item item, String name) {
@@ -71,7 +71,7 @@ public class BlastItems {
     }
 
     public static Item registerItem(Item item, String name, boolean registerDispenserBehavior) {
-        Registry.register(Registry.ITEM, Blast.MODID + ":" + name, item);
+        Registry.register(Registries.ITEM, Blast.MODID + ":" + name, item);
         if (registerDispenserBehavior) {
             DispenserBlock.registerBehavior(item, new ProjectileDispenserBehavior() {
                 @Override

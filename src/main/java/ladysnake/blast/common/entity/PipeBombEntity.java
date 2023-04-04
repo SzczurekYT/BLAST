@@ -21,7 +21,6 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-import net.minecraft.world.explosion.Explosion;
 
 public class PipeBombEntity extends PersistentProjectileEntity implements FlyingItemEntity {
     public final int MAX_FUSE = 20;
@@ -127,7 +126,7 @@ public class PipeBombEntity extends PersistentProjectileEntity implements Flying
 
         if (this.ticksUntilExplosion >= 0) {
             if (this.ticksUntilExplosion++ >= 5) {
-                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4.0F, Explosion.DestructionType.NONE);
+                this.world.createExplosion(this, this.getX(), this.getY(), this.getZ(), 4.0F, World.ExplosionSourceType.NONE);
                 this.discard();
             }
         }
@@ -146,7 +145,7 @@ public class PipeBombEntity extends PersistentProjectileEntity implements Flying
 
     public void explode() {
         if (!this.world.isClient) {
-            world.createExplosion(this.getOwner(), this.getX(), this.getY(), this.getZ(), 2f, Explosion.DestructionType.NONE);
+            world.createExplosion(this.getOwner(), this.getX(), this.getY(), this.getZ(), 2f, World.ExplosionSourceType.NONE);
             // TODO Explosion
         }
     }

@@ -20,7 +20,7 @@ import java.util.Set;
 
 public class KnockbackExplosion extends CustomExplosion {
     public KnockbackExplosion(World world, Entity entity, double x, double y, double z, float power) {
-        super(world, entity, x, y, z, power, null, DestructionType.NONE);
+        super(world, entity, x, y, z, power, null, DestructionType.KEEP);
     }
 
     public float getPower() {

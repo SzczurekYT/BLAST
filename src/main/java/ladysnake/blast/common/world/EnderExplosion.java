@@ -144,7 +144,7 @@ public class EnderExplosion extends CustomExplosion {
     @Override
     public void affectWorld(boolean boolean_1) {
         this.world.playSound(null, this.x, this.y, this.z, SoundEvents.ENTITY_ENDERMAN_TELEPORT, SoundCategory.BLOCKS, 4.0F, (1.0F + (this.world.random.nextFloat() - this.world.random.nextFloat()) * 0.2F) * 0.9F);
-        boolean boolean_2 = this.destructionType != DestructionType.NONE;
+        boolean boolean_2 = this.destructionType != DestructionType.KEEP;
         this.world.addParticle(ParticleTypes.REVERSE_PORTAL, this.x, this.y, this.z, 1.0D, 0.0D, 0.0D);
 
         Iterator var3;
